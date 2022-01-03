@@ -1,0 +1,4 @@
+bot/Bot.java
+ bot.Bot
+bot/Main.java
+ bot.Main
