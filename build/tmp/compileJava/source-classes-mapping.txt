@@ -1,3 +1,7 @@
+bot/User.java
+ bot.User
+bot/Voice.java
+ bot.Voice
 bot/Bot.java
  bot.Bot
 bot/Main.java
