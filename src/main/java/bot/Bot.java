@@ -14,11 +14,6 @@ import okhttp3.OkHttpClient;
 
 public class Bot implements HttpFunction{
     private final String TELEGRAM_BOT_KEY = "5097621438:AAGFrbmxA5tHjgbwMmnAj-vLbBVCN1WiX3c";
-
-    // ???
-    /*private OkHttpClient client;
-    TelegramBot bot = new TelegramBot.Builder("BOT_TOKEN").okHttpClient(client).build();*/
-
     private final TelegramBot bot = new TelegramBot(TELEGRAM_BOT_KEY);
 
     public void serve(){
@@ -39,8 +34,18 @@ public class Bot implements HttpFunction{
             String m = "";
             if(message.text() != null){
                 m = "You send me a text!";
-            } else{
-                m = "You send me not a text!";
+            } else if(message.voice() != null) {
+                m = "You send me a voice";
+            } else if(message.video() != null){
+                m = "You send me a video";
+            } else if(message.document() != null){
+                m = "You send me a document";
+            } else if(message.sticker() != null){
+                m = "You send me a sticker";
+            } else if (message.photo() != null){
+                m = "You send me a photo";
+            } else if (message.videoNote() != null){
+                m = "You send me a video note";
             }
 
             request = new SendMessage(chatID, m);
