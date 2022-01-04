@@ -12,7 +12,7 @@ import com.pengrad.telegrambot.request.BaseRequest;
 import com.pengrad.telegrambot.request.SendMessage;
 import okhttp3.OkHttpClient;
 
-public class Bot {
+public class Bot implements HttpFunction{
     private final String TELEGRAM_BOT_KEY = "5097621438:AAGFrbmxA5tHjgbwMmnAj-vLbBVCN1WiX3c";
 
     // ???
@@ -30,19 +30,31 @@ public class Bot {
         });
     }
 
-    private void process(Update update){
+    private void process(Update update) {
         Message message = update.message();
-        CallbackQuery callbackQuery = update.callbackQuery();
-
         BaseRequest request = null;
 
-        if (message != null) {
+        if(message != null){
             long chatID = message.chat().id();
-            request = new SendMessage(chatID, "Start Command!");
+            String m = "";
+            if(message.text() != null){
+                m = "You send me a text!";
+            } else{
+                m = "You send me not a text!";
+            }
+
+            request = new SendMessage(chatID, m);
         }
 
-        if (request != null) {
+        if(request != null){
             bot.execute(request);
         }
+    }
+
+
+    @Override
+    public void service(HttpRequest request, HttpResponse response) throws Exception {
+        var writer = response.getWriter();
+        writer.write("Hello developers!");
     }
 }
