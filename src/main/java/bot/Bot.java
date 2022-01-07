@@ -31,22 +31,7 @@ public class Bot implements HttpFunction{
 
         if(message != null){
             long chatID = message.chat().id();
-            String m = "";
-            if(message.text() != null){
-                m = "You send me a text!";
-            } else if(message.voice() != null) {
-                m = "You send me a voice";
-            } else if(message.video() != null){
-                m = "You send me a video";
-            } else if(message.document() != null){
-                m = "You send me a document";
-            } else if(message.sticker() != null){
-                m = "You send me a sticker";
-            } else if (message.photo() != null){
-                m = "You send me a photo";
-            } else if (message.videoNote() != null){
-                m = "You send me a video note";
-            }
+            String m = "Hola!";
 
             request = new SendMessage(chatID, m);
         }

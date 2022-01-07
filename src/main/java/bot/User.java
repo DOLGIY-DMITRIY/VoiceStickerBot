@@ -1,7 +1,7 @@
 package bot;
 
 public class User {
-    private long ID;
+    private long id;
     private String firstName;
     private String lastName;
     private String userName;
@@ -9,8 +9,14 @@ public class User {
     private int voiceCount = 0;
     private String password;
 
+    private final VoiceStorage voiceStorage = new VoiceStorage();
+
     User(long ID, String firstName, String lastName, String userName){
         //TODO
+    }
+
+    public long id(){
+        return id;
     }
 
 }
