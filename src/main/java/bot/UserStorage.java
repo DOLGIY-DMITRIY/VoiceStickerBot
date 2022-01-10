@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserStorage implements Storage<User> {
-    private final Map<Long, User> userStorage = new HashMap();
+    private final Map<Long, User> userStorage = new HashMap<Long, User>();
 
     @Override
     public void add(User object) {
