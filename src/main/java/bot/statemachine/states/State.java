@@ -1,15 +1,23 @@
 package bot.statemachine.states;
 
+import bot.UserStorage;
 import bot.statemachine.actions.Action;
+import com.pengrad.telegrambot.model.Update;
 
-abstract public class State<I> {
-    private Action action;
-    private I lastInput;
+abstract public class State {
+    protected Action action;
+    protected Update update;
 
-    public State(Action action, I lastInput){
+    State(Action action, Update update) {
         this.action = action;
-        this.lastInput = lastInput;
+        this.update = update;
     }
+
+    public void action(UserStorage storage) {
+        action.execute(update, storage);
+    }
+
+    abstract public State transition(Action action, Update update);
 
 
 }

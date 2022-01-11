@@ -15,6 +15,7 @@ import okhttp3.OkHttpClient;
 public class Bot implements HttpFunction{
     private final String TELEGRAM_BOT_KEY = "5097621438:AAGFrbmxA5tHjgbwMmnAj-vLbBVCN1WiX3c";
     private final TelegramBot bot = new TelegramBot(TELEGRAM_BOT_KEY);
+    private final UserStorage storage = new UserStorage();
 
     public void serve(){
         bot.setUpdatesListener(updates -> {
