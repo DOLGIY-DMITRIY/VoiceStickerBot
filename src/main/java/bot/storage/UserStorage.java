@@ -22,4 +22,6 @@ public class UserStorage implements Storage<User> {
     public User get(long id) {
         return userStorage.get(id);
     }
+
+
 }
