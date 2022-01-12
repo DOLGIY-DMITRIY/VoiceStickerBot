@@ -1,4 +1,6 @@
-package bot;
+package bot.storage;
+
+import bot.background.User;
 
 import java.util.HashMap;
 import java.util.Map;

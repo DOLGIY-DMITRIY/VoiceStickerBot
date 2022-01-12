@@ -1,6 +1,6 @@
 package bot.statemachine.states;
 
-import bot.UserStorage;
+import bot.storage.UserStorage;
 import bot.statemachine.actions.Action;
 import com.pengrad.telegrambot.model.Update;
 

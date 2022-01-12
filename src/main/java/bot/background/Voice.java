@@ -1,4 +1,4 @@
-package bot;
+package bot.background;
 
 public class Voice {
     private long id;

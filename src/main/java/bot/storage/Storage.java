@@ -1,4 +1,4 @@
-package bot;
+package bot.storage;
 
 public interface Storage<T> {
 

@@ -1,8 +1,9 @@
-package bot;
+package bot.background;
 
 import bot.statemachine.actions.TestAction;
 import bot.statemachine.states.General;
 import bot.statemachine.states.State;
+import bot.storage.VoiceStorage;
 import com.pengrad.telegrambot.model.Update;
 
 public class User {

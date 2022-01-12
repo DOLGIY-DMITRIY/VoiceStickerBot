@@ -1,9 +1,11 @@
-package bot;
+package bot.storage;
+
+import bot.background.Voice;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class VoiceStorage implements Storage<Voice>{
+public class VoiceStorage implements Storage<Voice> {
     private final Map<Long, Voice> voiceStorage = new HashMap<Long, Voice>();
 
     @Override
