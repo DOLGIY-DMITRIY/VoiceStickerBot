@@ -8,6 +8,7 @@ import com.pengrad.telegrambot.model.Update;
 
 public class User {
     private long id;
+    private String firstName;
     private String lastName;
     private String userName;
     private final int voiceAvailableCount = 5;
@@ -19,8 +20,8 @@ public class User {
 
     public User(Update update){
         this.id = update.message().chat().id();
-        this.lastName = update.message().chat().firstName();
-        this.userName = update.message().chat().lastName();
+        this.firstName = update.message().chat().firstName();
+        this.lastName = update.message().chat().lastName();
         this.userName = update.message().chat().username();
         state = new General(new TestAction(), update);
     }
@@ -31,6 +32,10 @@ public class User {
 
     public int voiceCount(){
         return voiceStorage.size();
+    }
+
+    public String info(){
+        return "User Name :" + userName + "; First Name : " + firstName + "; Last Name : " + lastName;
     }
 
 

@@ -13,15 +13,16 @@ public class MainHandler {
     public BaseRequest execute(Update update){
         Message message = update.message();
         long userID = message.chat().id();
-        System.out.println(storage.get(userID).id());
 
 
-        if(storage.get(userID) == null){
+        if(storage.get(userID) != null){
             return new SendMessage(userID, "I remember you!");
         } else{
             storage.add(new User(update));
             System.out.println(storage.get(userID).id());
+            System.out.println(storage.get(userID).info());
             return new SendMessage(userID, "Hi!");
         }
+
     }
 }

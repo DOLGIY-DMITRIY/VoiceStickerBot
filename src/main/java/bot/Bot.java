@@ -32,7 +32,7 @@ public class Bot implements HttpFunction{
         BaseRequest request = null;
 
         if(message != null){
-            request = new MainHandler().execute(update);
+            request = handler.execute(update);
         }
 
         if(request != null){
