@@ -1,5 +1,5 @@
-bot/background/MainHandler.java
- bot.background.MainHandler
+bot/Main.java
+ bot.Main
 bot/background/Voice.java
  bot.background.Voice
 bot/storage/VoiceStorage.java
@@ -24,7 +24,7 @@ bot/statemachine/states/General.java
  bot.statemachine.states.General
 bot/storage/UserStorage.java
  bot.storage.UserStorage
+bot/background/MainHandler.java
+ bot.background.MainHandler
 bot/Bot.java
  bot.Bot
-bot/Main.java
- bot.Main

@@ -16,13 +16,12 @@ public class MainHandler {
 
 
         if(storage.get(userID) != null){
+//            storage.get(userID).doAction(storage);
+            System.out.println(storage.get(userID).info());
             return new SendMessage(userID, "I remember you!");
         } else{
             storage.add(new User(update));
-            System.out.println(storage.get(userID).id());
-            System.out.println(storage.get(userID).info());
             return new SendMessage(userID, "Hi!");
         }
-
     }
 }
