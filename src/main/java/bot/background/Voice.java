@@ -1,10 +1,11 @@
 package bot.background;
 
 public class Voice {
-    private long id;
+    private String id;
+    private String uniqueId;
     private String name;
 
-    public long id(){
+    public String id(){
         return id;
     }
 

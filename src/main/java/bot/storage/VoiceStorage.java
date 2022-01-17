@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class VoiceStorage implements Storage<Voice> {
-    private final Map<Long, Voice> voiceStorage = new HashMap<Long, Voice>();
+    private final Map<String, Voice> voiceStorage = new HashMap<String, Voice>();
 
     @Override
     public void add(Voice object) {

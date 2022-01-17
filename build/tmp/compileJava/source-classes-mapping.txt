@@ -6,25 +6,17 @@ bot/storage/VoiceStorage.java
  bot.storage.VoiceStorage
 bot/storage/Storage.java
  bot.storage.Storage
-bot/statemachine/actions/NewUser.java
- bot.statemachine.actions.NewUser
-bot/statemachine/states/AwaitVoice.java
- bot.statemachine.states.AwaitVoice
-bot/statemachine/actions/TestAction.java
- bot.statemachine.actions.TestAction
+bot/background/MainHandler.java
+ bot.background.MainHandler
+bot/statemachine/allowers/Allower.java
+ bot.statemachine.allowers.Allower
 bot/statemachine/actions/Action.java
  bot.statemachine.actions.Action
 bot/background/User.java
  bot.background.User
 bot/statemachine/states/State.java
  bot.statemachine.states.State
-bot/statemachine/states/AwaitVoiceName.java
- bot.statemachine.states.AwaitVoiceName
-bot/statemachine/states/General.java
- bot.statemachine.states.General
 bot/storage/UserStorage.java
  bot.storage.UserStorage
-bot/background/MainHandler.java
- bot.background.MainHandler
 bot/Bot.java
  bot.Bot

@@ -12,11 +12,11 @@ import com.pengrad.telegrambot.model.Message;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.request.BaseRequest;
 import com.pengrad.telegrambot.request.SendMessage;
+import com.pengrad.telegrambot.response.BaseResponse;
 
 public class Bot implements HttpFunction{
     private final String TELEGRAM_BOT_KEY = "5097621438:AAGFrbmxA5tHjgbwMmnAj-vLbBVCN1WiX3c";
     private final TelegramBot bot = new TelegramBot(TELEGRAM_BOT_KEY);
-    private final MainHandler handler = new MainHandler();
 
     public void serve(){
         bot.setUpdatesListener(updates -> {
@@ -28,13 +28,14 @@ public class Bot implements HttpFunction{
     }
 
     private void process(Update update) {
-        Message message = update.message();
-        BaseRequest request = null;
+        getUpdate(update);
+    }
 
-        if(message != null){
-            request = handler.execute(update);
-        }
+    public Update getUpdate(Update update){
+        return update;
+    }
 
+    public void sendMessage(BaseRequest request){
         if(request != null){
             bot.execute(request);
         }
