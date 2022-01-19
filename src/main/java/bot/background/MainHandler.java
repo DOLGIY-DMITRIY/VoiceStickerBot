@@ -10,19 +10,25 @@ import com.pengrad.telegrambot.request.SendMessage;
 public class MainHandler {
 
     private final UserStorage storage = new UserStorage();
-    private final Bot bot = new Bot();
 
-    public BaseRequest execute(){
+    public BaseRequest execute(Update update){
         Message message = update.message();
         long userID = message.chat().id();
+        String text = "";
 
 
         if(storage.get(userID) != null){
             System.out.println(message.toString());
-            return new SendMessage(userID, "I remember you!");
+            text = "I remember you!";
         } else{
             storage.add(new User(update));
-            return new SendMessage(userID, "Hi!");
+            text = "Hi, " + message.chat().username();
         }
+
+        return message(userID, text);
+    }
+
+    private BaseRequest message(long chatID, String message){
+        return new SendMessage(chatID, message);
     }
 }

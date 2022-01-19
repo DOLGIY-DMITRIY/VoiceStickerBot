@@ -8,6 +8,4 @@ import com.pengrad.telegrambot.model.Update;
 // Set Voice Name
 // Delete Voice
 //
-public interface Action<O> {
-    public O action(Update update);
-}
+public interface Action {}

@@ -14,9 +14,11 @@ abstract public class State {
     }
 
 
-    abstract public State transition(Action action, Update update);
 
     public boolean canApply(Update update){
         return allower.canAllow(update);
     }
+
+    abstract public State transition(Action action, Update update);
+
 }
