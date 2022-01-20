@@ -7,7 +7,7 @@ import com.pengrad.telegrambot.model.Update;
 
 abstract public class State {
 
-    private Allower allower;
+    private final Allower allower;
 
     public State(Allower allower){
         this.allower = allower;
@@ -18,7 +18,5 @@ abstract public class State {
     public boolean canApply(Update update){
         return allower.canAllow(update);
     }
-
-    abstract public State transition(Action action, Update update);
 
 }
