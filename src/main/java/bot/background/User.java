@@ -29,6 +29,10 @@ public class User {
         return id;
     }
 
+    public boolean canAllow(Update update){
+        return state.canApply(update);
+    }
+
     public int voiceCount(){
         return voiceStorage.size();
     }

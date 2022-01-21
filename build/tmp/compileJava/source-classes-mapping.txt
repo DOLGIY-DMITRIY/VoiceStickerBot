@@ -1,22 +1,38 @@
-bot/Main.java
- bot.Main
-bot/background/Voice.java
- bot.background.Voice
-bot/storage/VoiceStorage.java
- bot.storage.VoiceStorage
+bot/storage/UserStorage.java
+ bot.storage.UserStorage
 bot/storage/Storage.java
  bot.storage.Storage
 bot/background/MainHandler.java
  bot.background.MainHandler
 bot/statemachine/allowers/Allower.java
  bot.statemachine.allowers.Allower
-bot/statemachine/actions/Action.java
- bot.statemachine.actions.Action
+bot/statemachine/allowers/SetVoiceName.java
+ bot.statemachine.allowers.SetVoiceName
 bot/background/User.java
  bot.background.User
+bot/statemachine/allowers/BackToAwait.java
+ bot.statemachine.allowers.BackToAwait
+bot/background/Voice.java
+ bot.background.Voice
+bot/StateMachine.java
+ bot.StateMachine
+bot/statemachine/states/AwaitVoice.java
+ bot.statemachine.states.AwaitVoice
+bot/storage/VoiceStorage.java
+ bot.storage.VoiceStorage
+bot/statemachine/allowers/CreateVoice.java
+ bot.statemachine.allowers.CreateVoice
+bot/statemachine/actions/Action.java
+ bot.statemachine.actions.Action
+bot/statemachine/allowers/CreateUser.java
+ bot.statemachine.allowers.CreateUser
+bot/statemachine/states/AwaitCommand.java
+ bot.statemachine.states.AwaitCommand
 bot/statemachine/states/State.java
  bot.statemachine.states.State
-bot/storage/UserStorage.java
- bot.storage.UserStorage
+bot/statemachine/states/AwaitVoiceName.java
+ bot.statemachine.states.AwaitVoiceName
 bot/Bot.java
  bot.Bot
+bot/Main.java
+ bot.Main
