@@ -1,7 +1,6 @@
 package bot.background;
 
-import bot.Bot;
-import bot.StateMachine;
+import bot.statemachine.StateMachine;
 import bot.storage.UserStorage;
 import com.pengrad.telegrambot.model.Message;
 import com.pengrad.telegrambot.model.Update;
@@ -14,20 +13,16 @@ public class MainHandler {
     StateMachine sm = new StateMachine();
 
     public BaseRequest execute(Update update){
-        Message message = update.message();
-        long userID = message.chat().id();
-        String text = "";
+        long userID = update.message().chat().id();
+        String text = "test text";
 
 
         if(storage.get(userID) != null){
-            System.out.println(message.toString());
             if(storage.get(userID).canAllow(update)){
 
             }
-            text = "I remember you!";
         } else{
             storage.add(new User(update));
-            text = "Hi, " + message.chat().username();
         }
 
         return message(userID, text);

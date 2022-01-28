@@ -3,6 +3,7 @@ package bot.storage;
 import bot.background.User;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserStorage implements Storage<User> {

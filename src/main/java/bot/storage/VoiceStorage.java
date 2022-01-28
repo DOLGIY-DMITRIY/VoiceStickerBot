@@ -22,6 +22,7 @@ public class VoiceStorage implements Storage<Voice> {
     public Voice get(long id) {
         return voiceStorage.get(id);
     }
+    
 
     public int size(){
         return voiceStorage.size();

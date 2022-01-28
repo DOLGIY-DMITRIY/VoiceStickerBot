@@ -1,5 +1,7 @@
 package bot.background;
 
+import bot.statemachine.allowers.CreateVoice;
+import bot.statemachine.states.AwaitCommand;
 import bot.statemachine.states.State;
 import bot.storage.UserStorage;
 import bot.storage.VoiceStorage;
@@ -23,6 +25,7 @@ public class User {
         this.firstName = update.message().chat().firstName();
         this.lastName = update.message().chat().lastName();
         this.userName = update.message().chat().username();
+        state = new AwaitCommand();
     }
 
     public long id(){

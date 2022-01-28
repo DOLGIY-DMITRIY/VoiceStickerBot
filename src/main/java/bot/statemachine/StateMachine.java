@@ -1,4 +1,4 @@
-package bot;
+package bot.statemachine;
 
 import bot.statemachine.allowers.BackToAwait;
 import bot.statemachine.allowers.CreateVoice;
@@ -10,14 +10,14 @@ import bot.statemachine.states.State;
 
 public class StateMachine {
     public State transition(AwaitCommand awaitCommand){
-        return new AwaitVoice(new SetVoiceName());
+        return new AwaitVoice();
     }
 
     public State transition(AwaitVoice awaitVoice){
-        return new AwaitVoiceName(new BackToAwait());
+        return new AwaitVoiceName();
     }
 
     public State transition(AwaitVoiceName awaitVoiceName){
-        return new AwaitCommand(new CreateVoice());
+        return new AwaitCommand();
     }
 }
